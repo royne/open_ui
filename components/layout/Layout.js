@@ -13,6 +13,7 @@ const Main = styled.main`
   width: 100%;
   height: 100vh;
   padding: 2%;
+  overflow-y: auto;
   @media (min-width: 576px) {
     padding: 3% 10%;
   }
@@ -63,7 +64,7 @@ const Layout = (props) => {
             font-family: "helvetica", sans-serif;
             color: var(--white);
           }
-          span{
+          span, small{
             color: var(--white  );
           }
           label{
