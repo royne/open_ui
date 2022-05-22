@@ -13,3 +13,21 @@ export const getCourse = async id =>{
   const data = await response.json()
   return data 
 }
+
+export const getStudent = async id => {
+  const url = `${BASE_URL}/users/${id}`
+  const response = await fetch(url)
+  const data = await response.json()
+  return data
+}
+
+export const updateStudent = async (id, student) => {
+  const url = `${BASE_URL}/users/${id}`
+  const response = await fetch(url,{
+    method:"PATCH",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(student)
+  })
+  const data = await response.json()
+  return data
+}

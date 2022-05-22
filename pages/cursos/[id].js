@@ -37,7 +37,7 @@ const Course = () => {
             <span>INSTRUCTOR</span>
           </div>
           <div>
-            <Book />
+            <Book data={course.book} />
             <span>LIBRO</span>
           </div>
         </BoxCourse>

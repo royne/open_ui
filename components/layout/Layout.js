@@ -33,6 +33,7 @@ const Layout = (props) => {
           html {
             font-size: 62.5%;
             box-sizing: border-box;
+            background: var(--black);
           }
           *,
           *:before,

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import Link from 'next/link'
 
 const Card = styled.article`
   width: 250px;
@@ -27,16 +28,24 @@ const Card = styled.article`
     font-weight: bold;
     text-decoration: underline;
   }
+  transition: 0.4s;
+  &:hover{
+    cursor: pointer;
+    transform: scale(0.95, 0.95);
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+  }
 `
 
 const CardUser = ({student}) => {
   return (
-    <Card>
-      <img src="/avatar.png" />  
-      <h3>{student.name}</h3>
-      <span>{student.email}</span>
-      <small>tiempo de lectura 20 min</small>
-    </Card>
+    <Link href={`/estudiantes/${student.id}`}>
+      <Card>
+        <img src="/avatar.png" />  
+        <h3>{student.name}</h3>
+        <span>{student.email}</span>
+        {student.reading_time && <small>tiempo de lectura {parseInt(student.reading_time)} min</small>}
+      </Card>
+    </Link>
   )
 }
 
